@@ -1,0 +1,10 @@
+#!/bin/sh
+# distrobox_binary
+# name: archbox
+if [ -z "${CONTAINER_ID}" ]; then
+	exec "/usr/bin/distrobox-enter"  -n archbox  --  '/usr/bin/viu'  "$@"
+elif [ -n "${CONTAINER_ID}" ] && [ "${CONTAINER_ID}" != "archbox" ]; then
+	exec distrobox-host-exec '/home/david/.local/bin/viu' "$@"
+else
+	exec '/usr/bin/viu' "$@"
+fi
