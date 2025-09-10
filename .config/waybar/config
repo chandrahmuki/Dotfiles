@@ -1,0 +1,68 @@
+{
+  "layer": "top",
+  "position": "top",
+  "width":1000,
+  "height":40,
+  "modules-left": ["niri/workspaces","mpris", "network"],
+  "modules-center": ["clock"],
+  "modules-right": ["pulseaudio", "tray"],
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "on-click": "activate", 
+    "on-scroll-up": "prev",
+    "on-scroll-down": "next",
+    "format-icons": {
+      "1": "●",
+      "2": "●",
+      "3": "●",
+      "4": "●",
+      "5": "●"
+    }
+  },
+
+  "network": {
+    "interface": "enp0s31f6",
+    "format-wired": " {ipaddr}",
+    "tooltip-format": "{ifname}: {ipaddr}",
+    "on-click": "nmcli connection up \"Aesir vpn\" --ask"
+
+  },
+
+  "clock": {
+    "format": "{:%H:%M}",
+    "tooltip-format": "{:%A %d %B %Y}"
+  },
+
+  "bluetooth": {
+    "format": " {status}",
+    "format-connected": " {num_connections}",
+    "tooltip-format-connected": "{controller_alias}\n{device_enumerate}",
+    "tooltip-format-enumerate-connected": "{device_alias}",
+    "on-click": "blueman-manager"   // ouvre Blueman quand tu cliques
+},
+  
+ "mpris": {
+    "format": "{player_icon} {artist} - {title}",
+    "format-paused": "{player_icon}  {artist} - {title}",
+    "player-icons": {
+      "mpv": "󰎆"
+    },
+    "ignored-players": [],
+    "on-click": "playerctl play-pause",
+    "on-scroll-up": "playerctl next",
+    "on-scroll-down": "playerctl previous"
+  },
+
+
+  "pulseaudio": {
+    "format": " {volume}%",
+    "tooltip": true
+  },
+
+  "tray": {
+    "icon-size": 20,
+    "spacing": 8
+  }
+}
+
