@@ -1,11 +1,17 @@
-return{
-
-  {
-    "folke/which-key.nvim",
-    lazy = false,        -- force charge immédiat
-    config = function(_, opts)
-      require("which-key").setup(opts)
-    end,
+return {
+  "folke/which-key.nvim",
+  event = "VeryLazy",
+  opts = {
+    preset = "modern",
   },
-
+  keys = {
+    {
+      "<leader>?",
+      function()
+        require("which-key").show({ global = false })
+      end,
+      desc = "Buffer Local Keymaps (which-key)",
+    },
+  },
 }
+
