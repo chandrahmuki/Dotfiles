@@ -21,8 +21,6 @@
 }
 
 window#waybar {
-  border: 2px solid #5E81AC;
-  border-radius: 4px;
   background-color: @nord0;
   color: @nord4;
 }
@@ -40,20 +38,15 @@ window#waybar {
   color: @nord8;
 }
 
-#network {color: #ffffff;
-background-color: rgba(17, 24, 39, 0.85);
-border-radius: 14px;
+#network {
+  color: @nord8;
 }
 
-#clock {color: #ffffff;
-background-color: rgba(46, 52, 64, 0.85);
-border-radius: 14px;
-background: transparent;
+#clock {
+  color: @nord13;
 }
 
-#pulseaudio {color: #ffffff;
-background-color: rgba(46, 52, 64, 0.85);
-border-radius: 14px;
-background: transparent;
+#pulseaudio {
+  color: @nord14;
 }
 
